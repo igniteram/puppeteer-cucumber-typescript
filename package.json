@@ -4,6 +4,7 @@
   "description": "E2E automation framework using puppeteer , cucumber &amp; typescript",
   "main": "index.js",
   "scripts": {
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "pretest": "ts-node ./utils/json.ts",
     "cucumber": "cucumber-js ./features/*.feature --require-module ts-node/register --require './src/*/*.ts' --format 'json:./reports/json/cucumber_report.json'",
     "report": "ts-node ./utils/reporter.ts",
@@ -22,6 +23,7 @@
     "puppeteer": "^1.7.0",
     "rimraf": "^2.6.2",
     "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
     "typescript": "^3.0.1"
   },
   "repository": {
