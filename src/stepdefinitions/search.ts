@@ -1,6 +1,6 @@
-import { searchPage } from "../pages/searchPage";
-import { page } from "../support/hooks";
-const { When, Then } = require("cucumber");
+import { searchPage } from '../pages/searchPage';
+import { page } from '../support/hooks';
+const { When, Then } = require('cucumber');
 
 When(/^I type "(.*?)"$/, async (text) => {
     await page.sendElementText(searchPage.searchTextBox, text);

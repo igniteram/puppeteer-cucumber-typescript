@@ -371,10 +371,10 @@ class PageHelper {
     }
   }
 
-  public async screenshot() : Promise<any> {
+  public async screenshot(): Promise<any> {
     try {
         return await this.page.screenshot();
-    } catch(Exception) {
+    } catch (Exception) {
         throw new Error(Exception.toString());
     }
   }
