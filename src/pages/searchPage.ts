@@ -5,11 +5,11 @@ interface SearchPage {
     logo: string;
 }
 
-const searchPage : SearchPage = {
+const searchPage: SearchPage = {
     url: 'https://www.google.com',
     searchTextBox: '#lst-ib',
     searchButton: 'input[value="Google Search"]',
-    logo: 'div#logocont'
-}
+    logo: 'div#logocont',
+};
 
 export {searchPage};
