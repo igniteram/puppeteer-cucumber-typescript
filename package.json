@@ -1,6 +1,6 @@
 {
   "name": "puppeteer-cucumber-typescript",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "E2E automation framework using puppeteer , cucumber &amp; typescript",
   "main": "index.js",
   "scripts": {
