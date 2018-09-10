@@ -1,5 +1,6 @@
 <p align="center">
-<img src= "./images/pct.png" height=150 alt="titleImage.png"/>
+<img src= "./images/pct.png" height=250
+alt="titleImage.png"/>
 </p>
 
 <p align="center">
