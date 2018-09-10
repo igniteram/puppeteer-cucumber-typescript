@@ -1,5 +1,5 @@
 <p align="center">
-<img src= "./images/puppeteer-cucumber-typescript.png" height=150 alt="titleImage.png"/>
+<img src= "./images/pct.png" height=150 alt="titleImage.png"/>
 </p>
 
 <p align="center">
