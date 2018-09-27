@@ -53,6 +53,18 @@ public async init() {
   }
 ```
 
+#### Run tests in Windows
+
+In windows machines due to some strange reason(need to do more debugging) cucumber is not allowing string characters in command line. So workaround is to remove them.
+
+Please see this [issue](https://github.com/igniteram/puppeteer-cucumber-typescript/issues/10) 
+
+Just run the below command which would run the test scripts & generate report successfully
+
+```
+npm run test-windows
+```
+
 #### Writing Features
 ```
 Feature: To search typescript in google
