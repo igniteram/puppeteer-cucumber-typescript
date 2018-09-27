@@ -1,5 +1,5 @@
 const { BeforeAll, After, AfterAll, Status } = require('cucumber');
-import {PageHelper} from '../pages/PageHelper';
+import {PageHelper} from '../pages/pageHelper';
 import {searchPage} from '../pages/searchPage';
 
 const page: PageHelper = new PageHelper();
