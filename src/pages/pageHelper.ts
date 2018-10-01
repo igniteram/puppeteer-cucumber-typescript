@@ -15,6 +15,8 @@ class PageHelper {
       this.browser = await launch({
         headless: true,
         args: ['–no-sandbox', '–disable-setuid-sandbox', '--disable-notifications', '--start-maximized'],
+        ignoreHTTPSErrors: true,
+        dumpio: false,
       });
       this.page = await this.browser.newPage();
     } catch (Exception) {
