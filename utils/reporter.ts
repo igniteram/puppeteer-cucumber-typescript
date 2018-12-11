@@ -14,6 +14,7 @@ const cucumberReporterOptions = {
 function createHTMLReport() {
     try {
         reporter.generate(cucumberReporterOptions); // invoke cucumber-html-reporter
+        console.log('HTML report generated successfully!');
     } catch (err) {
         if (err) {
             throw new Error('Failed to save cucumber test results to json file.');
