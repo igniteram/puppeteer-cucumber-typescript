@@ -9,7 +9,7 @@
     "cucumber": "cucumber-js ./features/*.feature --require-module ts-node/register --require './src/*/*.ts' --format 'json:./reports/json/cucumber_report.json'",
     "cucumber-windows": "cucumber-js ./features/*.feature --require-module ts-node/register --require ./src/*/*.ts --format json:./reports/json/cucumber_report.json",
     "report": "ts-node ./utils/reporter.ts",
-    "test": "npm run cucumber && npm run report",
+    "test": "npm run cucumber ; npm run report",
     "test-windows": "npm run pretest && npm run cucumber-windows && npm run report"
   },
   "author": "Ram Pasala <ram.pasala7@gmail.com>",
@@ -19,7 +19,7 @@
     "@types/puppeteer": "^1.6.1",
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
-    "cucumber": "^4.2.1",
+    "cucumber": "^5.0.3",
     "cucumber-html-reporter": "^4.0.3",
     "mkdirp": "^0.5.1",
     "puppeteer": "^1.7.0",

@@ -7,9 +7,9 @@ interface SearchPage {
 
 const searchPage: SearchPage = {
     url: 'https://www.google.com',
-    searchTextBox: '#lst-ib',
+    searchTextBox: 'input[title="Search"]',
     searchButton: 'input[value="Google Search"]',
-    logo: 'div#logocont',
+    logo: '#logo > img',
 };
 
 export {searchPage};

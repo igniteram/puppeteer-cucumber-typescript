@@ -1,4 +1,4 @@
-import {Browser, ElementHandle, launch, Page, Response} from 'puppeteer';
+import { Browser, ElementHandle, launch, Page, Response } from 'puppeteer';
 
 class PageHelper {
   private browser: Browser;
@@ -14,7 +14,9 @@ class PageHelper {
     try {
       this.browser = await launch({
         headless: true,
-        args: ['--disable-notifications', '--start-maximized'],
+        args: ['–no-sandbox', '–disable-setuid-sandbox', '--disable-notifications', '--start-maximized'],
+        ignoreHTTPSErrors: true,
+        dumpio: false,
       });
       this.page = await this.browser.newPage();
     } catch (Exception) {
@@ -207,8 +209,8 @@ class PageHelper {
     while (i < this.retryCount) {
       try {
         const elementHandle = await this.page.$(element);
-        await elementHandle.click({clickCount: 3});
-        return await  elementHandle.press('Backspace');
+        await elementHandle.click({ clickCount: 3 });
+        return await elementHandle.press('Backspace');
       } catch (Exception) {
         try {
           i++;
@@ -330,7 +332,7 @@ class PageHelper {
     let i: number = 0;
     while (i < this.retryCount) {
       try {
-        await this.page.waitForSelector(element, {timeout: 1000});
+        await this.page.waitForSelector(element, { timeout: 1000 });
         if ((await this.page.$(element)) !== null) {
           return true;
         } else {
@@ -359,7 +361,7 @@ class PageHelper {
           }
           const style = window.getComputedStyle(el);
           return style && style.display !== 'none' && style.visibility !== 'hidden' &&
-              style.opacity !== '0';
+            style.opacity !== '0';
         });
         return isVisible;
       } catch (Exception) {
@@ -373,9 +375,9 @@ class PageHelper {
 
   public async screenshot(): Promise<any> {
     try {
-        return await this.page.screenshot();
+      return await this.page.screenshot();
     } catch (Exception) {
-        throw new Error(Exception.toString());
+      throw new Error(Exception.toString());
     }
   }
   public async close() {
@@ -387,4 +389,4 @@ class PageHelper {
   }
 }
 
-export {PageHelper};
+export { PageHelper };
