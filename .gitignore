@@ -3,3 +3,5 @@ reports
 *-lock.json
 .vscode
 .DS_Store
+coverage
+.nyc_output
