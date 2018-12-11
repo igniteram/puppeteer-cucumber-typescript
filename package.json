@@ -6,11 +6,13 @@
   "scripts": {
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "pretest": "ts-node ./utils/json.ts",
-    "cucumber": "cucumber-js ./features/*.feature --require-module ts-node/register --require './src/*/*.ts' --format 'json:./reports/json/cucumber_report.json'",
+    "cucumber": "nyc cucumber-js ./features/*.feature --require-module ts-node/register --require './src/*/*.ts' --format 'json:./reports/json/cucumber_report.json'",
     "cucumber-windows": "cucumber-js ./features/*.feature --require-module ts-node/register --require ./src/*/*.ts --format json:./reports/json/cucumber_report.json",
     "report": "ts-node ./utils/reporter.ts",
     "test": "npm run cucumber ; npm run report",
-    "test-windows": "npm run pretest && npm run cucumber-windows && npm run report"
+    "test-windows": "npm run pretest && npm run cucumber-windows && npm run report",
+    "code-coverage-report":"nyc report --reporter=html",
+    "test-coverage": "npm run test && npm run code-coverage-report"
   },
   "author": "Ram Pasala <ram.pasala7@gmail.com>",
   "devDependencies": {
@@ -23,6 +25,7 @@
     "cucumber-html-reporter": "^4.0.3",
     "mkdirp": "^0.5.1",
     "puppeteer": "^1.7.0",
+    "puppeteer-to-istanbul": "^1.2.2",
     "rimraf": "^2.6.2",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
@@ -37,5 +40,27 @@
   "bugs": {
     "url": "https://github.com/igniteram/puppeteer-cucumber-typescript/issues"
   },
-  "homepage": "https://github.com/igniteram/puppeteer-cucumber-typescript#readme"
+  "homepage": "https://github.com/igniteram/puppeteer-cucumber-typescript#readme",
+  "dependencies": {
+    "nyc": "^13.1.0"
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.tsx"
+    ],
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "text-summary",
+      "html"
+    ],
+    "sourceMap": true,
+    "instrument": true
+  }
 }

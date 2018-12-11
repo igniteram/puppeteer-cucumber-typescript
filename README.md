@@ -8,6 +8,12 @@ alt="titleImage.png"/>
 </strong></i>
 <p>
 
+<p align="center">
+<a href="https://circleci.com/gh/igniteram/puppeteer-cucumber-typescript/tree/master"><img alt="circleCI Status" src="https://circleci.com/gh/igniteram/puppeteer-cucumber-typescript/tree/master.svg?style=shield"></a>
+<a href="https://david-dm.org/igniteram/puppeteer-cucumber-typescript"><img alt="dependencies status" src="https://david-dm.org/igniteram/puppeteer-cucumber-typescript.svg"></a>
+<a href="https://opensource.org/licenses/MIT"><img alt="MIT License" src="https://img.shields.io/dub/l/vibe-d.svg"></a>
+</p>
+
 ### To Get Started
 
 #### Pre-requisites
@@ -30,6 +36,13 @@ Just run the below command
 npm test
 ```
 The above command would trigger tests in chrome headless mode and generate cucumber **json** & **html** reports automatically!
+
+The above command also would generate the **test coverage** with the help of puppeteer's jscoverage feature in conjugation with istanbul reports.
+
+> The coverage report would be available in **coverage** folder
+
+Pleaase check the [Test Coverage](#Coverage) section for more details
+
 
 <p>
 <img src= "./images/result.gif" alt="result.gif"/>
@@ -138,6 +151,12 @@ Currently this project has been integrated with [cucumber-html-reporter](https:/
 They can be customized according to user's specific needs.
 
 ![cucumberreporterscreen](./images/report.png)
+
+#### Coverage
+
+This project has been integrated with [puppeteer-to-istanbul](https://github.com/istanbuljs/puppeteer-to-istanbul) module which helps in generating the coverage by puppeteer to istanbul reports.
+
+![coverage](./images/coverage.png)
 
 ## Contributions
 For contributors who want to improve this repo by contributing some code, reporting bugs, issues or improving documentation - PR's are highly welcome, please maintain the coding style , folder structure , detailed description of documentation and bugs/issues with examples if possible.

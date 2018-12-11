@@ -9,6 +9,7 @@ BeforeAll({timeout: 100 * 1000}, async () => {
     await page.open(searchPage.url);
 });
 
+/* istanbul ignore next */
 After(async function(scenario) {
     if (scenario.result.status === Status.FAILED) {
         // screenShot is a base-64 encoded PNG
