@@ -1,12 +1,11 @@
 const { BeforeAll, After, AfterAll, Status } = require('cucumber');
+import {loginPage} from '../pages/loginPage';
 import {PageHelper} from '../pages/pageHelper';
-import {searchPage} from '../pages/searchPage';
-
 const page: PageHelper = new PageHelper();
 
 BeforeAll({timeout: 100 * 1000}, async () => {
     await page.init();
-    await page.open(searchPage.url);
+    await page.open(loginPage.url);
 });
 
 /* istanbul ignore next */

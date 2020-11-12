@@ -167,6 +167,24 @@ class PageHelper {
       throw new Error(Exception.toString());
     }
   }
+
+  public async newWindow() {
+    let i: number = 0;
+    while (i < this.retryCount) {
+        try {
+          const pageTarget = this.page.target();
+          const newTarget = await this.browser.waitForTarget(target => target.opener() === pageTarget);
+          const newPage = await newTarget.page();
+          return newPage;
+        } catch (Exception) /* istanbul ignore next */ {
+        i++;
+        if (i === this.retryCount) {
+          throw new Error(Exception.toString());
+        }
+      }
+    }
+
+  }
   public async close() {
     try {
       const pti = require('puppeteer-to-istanbul');

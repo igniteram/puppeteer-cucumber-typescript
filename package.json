@@ -11,7 +11,7 @@
     "report": "ts-node ./utils/reporter.ts",
     "test": "npm run cucumber ; npm run report",
     "test-windows": "npm run pretest && npm run cucumber-windows && npm run report",
-    "code-coverage-report":"nyc report --reporter=html",
+    "code-coverage-report": "nyc report --reporter=html",
     "test-coverage": "npm run test && npm run code-coverage-report"
   },
   "author": "Ram Pasala <ram.pasala7@gmail.com>",
